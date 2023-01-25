@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/first.css">
+</head>
+<body>
+    <div class="container">
+
+            <div class="sign-up">
+                <form>
+                <h1>ĐĂNG KÍ TÀI KHOẢN</h1>
+                <h3>Email</h3>
+                <input type="email" required id="sign-up_email">
+                <h3>Tên đăng nhập</h3>
+                <input type="text" required id="sign-up_username">
+                <h3>Mật khẩu</h3>
+                <input type="password" required id="sign-up_password">
+                <h3>Nhập lại mật khẩu</h3>
+                <input type="password" required id="sign-up_retype">
+                <button onclick="signup()">Đăng kí</button>
+                </form>
+            </div>
+            <div class="sign-in">
+                <form>
+                <h1>ĐĂNG NHẬP</h1>
+                <h3>Email / Username</h3>
+                <input type="text" required id="sign-in_username-email">
+                <h3>Mật khẩu</h3>
+                <input type="password" required id="sign-in_password"> 
+                </form>
+                <button onclick="signin()">Đăng nhập</button>
+                
+            </div>
+    </div>
+
+    <script src="../js/first.js"></script>
+</body>
+</html>
