@@ -21,8 +21,6 @@ const signup = () => {
 const signin = () => {
     const signin_email_username = document.querySelector("#sign-in_username-email");
     const signin_password = document.querySelector("#sign-in_password");
-    console.log(localStorage.getItem('user'));
-    console.log(signin_email_username.value)
     const signinData = JSON.parse(localStorage.getItem('user'))
     if (signinData.username === signin_email_username.value || signinData.email === signin_email_username.value) {
         if (signinData.password === signin_password.value) {
