@@ -14,24 +14,24 @@ const signup = () => {
     }
     else {
         console.log('pass')
-        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem(signup_username.value, JSON.stringify(user));
     }
 
 };
 const signin = () => {
-    const signin_email_username = document.querySelector("#sign-in_username-email");
+    const signin_username = document.querySelector("#sign-in_username");
     const signin_password = document.querySelector("#sign-in_password");
-    const signinData = JSON.parse(localStorage.getItem('user'))
-    if (signinData.username === signin_email_username.value || signinData.email === signin_email_username.value) {
-        if (signinData.password === signin_password.value) {
+    const siginData = JSON.parse(localStorage.getItem(signin_username.value));
+    if (localStorage.getItem(signin_username.value) !== null) {
+        if (signin_password.value === siginData.password) {
             window.location = '../html/home.html'
-            console.log('passs');
+            localStorage.setItem('isLogin', signin_username.value)
         }
         else {
-            alert("Mật khẩu của bạn đã bị sai")
+            console.log('Sai mật khẩu');
         }
     }
     else {
-        alert('Người dùng không tồn tại')
+        console.log("Người dùng không tồn tại")
     }
 }
