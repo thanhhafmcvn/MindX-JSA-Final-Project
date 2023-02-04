@@ -25,7 +25,7 @@ const signin = () => {
     if (localStorage.getItem(signin_username.value) !== null) {
         if (signin_password.value === siginData.password) {
             window.location = '../html/home.html'
-            localStorage.setItem('isLogin', signin_username.value)
+            localStorage.setItem('currentLogin', signin_username.value)
         }
         else {
             console.log('Sai mật khẩu');
