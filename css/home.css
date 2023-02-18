@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
 html,
 body {
   scroll-behavior: smooth;
@@ -10,39 +10,71 @@ body {
 }
 
 .nav-bar {
-    font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
-    margin: auto;
-    display: flex;
-    background-color: coral;
-    height: 70px;
-    align-items: center;
-    justify-content: space-around;
-    
+  font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
+  margin: auto;
+  display: flex;
+  background-color: #cc232a;
+  height: 70px;
+  align-items: center;
+  justify-content: space-around;
+}
+.nav-bar > h1 {
+ color: #ffd84b;
+}
+.nav-bar > .dropdown> h1 {
+ color: #f5ac27;
+}
+.nav-bar > a {
+  text-decoration: none;
+  color: #f5ac27;
+  font-size: 24px;
+}
+.nav-bar > .dropdown> .user-menu {
+  cursor: pointer;
+  font-size: 24px;
+}
+.nav-bar > .dropdown > h1 > i {
+  cursor: pointer;
+  color: #f5ac27;
 }
 
-html, body {
-  background: #F7F5E6;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+.nav-bar > a:hover {
+  transition: ease 0.5s;
+  text-decoration: none;
+  color: #ffd84b;
+  font-size: 24px;
 }
-#event-heading {
-  font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+.nav-bar > .dropdown > h1 > i:hover {
+  transition: ease 0.5s;
+  text-decoration: none;
+  color: #ffd84b;
+  font-size: 24px;
+}
+
+.nav-bar > .dropdown > h1:hover {
+  transition: ease 0.5s;
+  text-decoration: none;
+  color: #ffd84b;
+  font-size: 24px;
+}
+h1 {
+  font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
   text-align: center;
   font-weight: 400;
 }
 
 .slider {
+  border-radius: 25px;
   margin: 0 auto;
   max-width: 940px;
 }
 .slide > img {
+  border-radius: 25px;
   height: 600px;
   width: 940px;
-
 }
 .slide_viewer {
+  border-radius: 25px;
   height: 600px;
   overflow: hidden;
   position: relative;
@@ -65,25 +97,6 @@ html, body {
   display: block;
 }
 
-.slide:nth-of-type(1) {
-  height: 700px;
-  width: 1000px;
-  object-fit: cover;
-  background: #D7A151;
-}
-
-.slide:nth-of-type(2) {
-  background: #F4E4CD;
-}
-
-.slide:nth-of-type(3) {
-  background: #C75534;
-}
-
-.slide:nth-of-type(4) {
-  background: #D1D1D4;
-}
-
 .slide_buttons {
   left: 0;
   position: absolute;
@@ -102,14 +115,14 @@ a.slide_btn {
   transition: all 0.4s ease-in-out;
 }
 
-
-.slide_btn.active, .slide_btn:hover {
-  color: #428CC6;
+.slide_btn.active,
+.slide_btn:hover {
+  color: #428cc6;
   cursor: pointer;
 }
 
 .directional_nav {
-  height: 340px;
+  height: 100px;
   margin: 0 auto;
   max-width: 940px;
   position: relative;
@@ -132,10 +145,12 @@ a.slide_btn {
   top: 0;
 }
 
-.previous_btn, .next_btn {
+.previous_btn,
+.next_btn {
+  font-size: 50px;
   cursor: pointer;
   height: 65px;
-  opacity: 0.5;
+  opacity: 0.2;
   -webkit-transition: opacity 0.4s ease-in-out;
   -moz-transition: opacity 0.4s ease-in-out;
   -ms-transition: opacity 0.4s ease-in-out;
@@ -144,9 +159,8 @@ a.slide_btn {
   width: 65px;
 }
 
-
-.previous_btn:hover, .next_btn:hover {
-  
+.previous_btn:hover,
+.next_btn:hover {
   opacity: 1;
 }
 
@@ -157,4 +171,229 @@ a.slide_btn {
   .next_btn {
     right: 50px;
   }
+}
+input {
+  border-radius: 25px;
+}
+.search {
+  justify-content: center;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  align-items: center;
+}
+#search-input {
+  font-family: "Montserrat", sans-serif;
+  border: none;
+  background-color: #ededec;
+  padding: 10px 30px 10px 30px;
+  font-size: 24px;
+}
+#search-icon {
+  transition: ease 0.5s;
+  cursor: pointer;
+  color: #f5ac27;
+  width: 2vw;
+  padding: 10px 30px 10px 30px;
+  border-radius: 25px;
+  background-color: #cc232a;
+  margin-left: 30px;
+  font-size: 30px;
+}
+#search-icon:hover {
+  text-align: center;
+  transition: ease 0.5s;
+  cursor: pointer;
+  color: #f5ac27;
+  width: 5vw;
+  padding: 10px 30px 10px 30px;
+  border-radius: 25px;
+  background-color: #cc232a;
+  margin-left: 30px;
+  font-size: 35px;
+}
+.place-name {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
+  text-align: center;
+  font-weight: 700;
+  font-size: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+h3 {
+  font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
+}
+.place-name_heading {
+  background-color: #991216;
+  width: 22vw;
+  padding: 20px;
+  border-radius: 25px;
+  color: #ffd84b;
+}
+
+.weather-cards {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: #f3f0f0;
+  width: 90vw;
+  padding: 30px;
+  border-radius: 25px;
+}
+.weather-card {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+  background-color: #991216;
+  border-radius: 25px;
+  width: 350px;
+  height: 500px;
+  margin-bottom: 15px;
+}
+.feels-like,
+.date,
+.highest-temperature,
+.lowest-temperature,
+.humidity {
+  color: #ffd84b;
+}
+.weather-icon {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.weather-icon > img {
+  margin-bottom: 20px;
+  width: 150px;
+  height: 100px;
+}
+i {
+  color: #ffffff;
+}
+
+.flip-card {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 70vw;
+}
+
+.father {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 50px auto;
+  transition: all 1s ease-in-out;
+  transform-style: preserve-3d;
+}
+.father:hover {
+  transform: rotateY(180deg);
+}
+.father div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  text-align: center;
+  line-height: 300px;
+  color: #fff;
+}
+.front {
+  z-index: 2;
+  backface-visibility: hidden;
+}
+.back {
+  z-index: 1;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.front > img {
+  width: calc(2000px / 5);
+  height: calc(2000px / 5);
+}
+.back > img {
+  border-radius: 25px;
+  width: calc(750px / 2);
+  height: calc(750px / 2);
+}
+footer {
+  margin: auto;
+  margin-top: 100px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  background-color: #e2dfdf;
+}
+footer > .contact-information > h3 > i {
+  margin: 10px;
+  color: black;
+}
+footer > .social-media_account > h3 > i {
+  margin: 10px;
+  color: black;
+}
+footer > .social-media_account > h3 > a > i {
+  margin: 10px;
+  color: black;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+.dropdown-content > a {
+  font-family: 'Montserrat', sans-serif;
+  color: red;
+ 
 }

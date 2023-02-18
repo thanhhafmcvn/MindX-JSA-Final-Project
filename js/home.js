@@ -1,7 +1,13 @@
-const user_greeting = document.querySelector('#user_greeting');
-user_greeting.innerHTML = `Xin chào, ${localStorage.getItem('currentLogin')}`;
-
-
+const showUsername = () => {
+  const username = localStorage.getItem('currentLogin');
+  document.querySelector(
+    ".user-menu"
+  ).innerHTML = `<i class="fa-solid fa-user"></i> ${username}`;
+}
+const logout = () => {
+  localStorage.removeItem('currentLogin');
+  window.location = '../html/sign-in.html';
+}
 $(".slider").each(function () {
   var $this = $(this);
   var $group = $this.find(".slide_group");
@@ -96,3 +102,51 @@ $(".slider").each(function () {
 
   advance();
 });
+const getWeather = async () => {
+  const place = document.querySelector("#search-input").value;
+  console.log(place);
+  const defaultUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${place}?unitGroup=metric&key=JQQKA7B32A5DBBNY28V9RC423&contentType=json`;
+  const response = await axios.get(defaultUrl);
+  const data = response.data;
+  return data;
+};
+
+const showWeather = () => {
+  getWeather().then((data) => {
+    document.querySelector(
+      ".place-name"
+    ).innerHTML = `<h3 class="place-name_heading"> ${data.resolvedAddress}</h3>`;
+    data.days.map((item, index) => {
+      document.querySelector(".weather-cards").insertAdjacentHTML(
+        "beforeend",
+        `<div class="weather-card">
+                  <div class="weather-icon">
+                  <img src='../images/weather-icons/${item.icon}.svg'
+                </div>
+                <h3 class="date">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  ${item.datetime}
+                </h3>
+                <h3 class="feels-like">
+                  <i class="fa-solid fa-child-reaching"></i>
+                  ${item.feelslike} °C
+                </h3>
+                <h3 class="highest-temperature">
+                  <i class="fa-solid fa-temperature-arrow-up"></i>
+                  ${item.tempmax} °C            
+                </h3>
+                <h3 class="lowest-temperature">
+                  <i class="fa-solid fa-temperature-arrow-down"></i>
+                  ${item.tempmin} °C
+                </h3>
+                <h3 class="humidity">
+                  <i class="fa-solid fa-droplet"></i>
+                  ${item.humidity} %
+                </h3>
+              </div>`
+      );
+    });
+  });
+};
+
+showUsername();
